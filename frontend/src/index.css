@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+/* 1. Define your custom theme variables (Replacing tailwind.config.js) */
+@theme {
+  --color-brand-500: #3b82f6; /* Replace with your actual brand-500 hex code */
+  --color-brand-600: #2563eb; /* Replace with your actual brand-600 hex code */
+  --color-brand-700: #1d4ed8; /* Replace with your actual brand-700 hex code */
+}
+
+/* 2. Base styles */
+@utility body {
+  @apply font-sans antialiased text-slate-800 bg-slate-50;
+}
+
+/* 3. Custom component utilities */
+@utility btn-primary {
+  @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-600 text-white font-semibold rounded-xl hover:bg-brand-700 transition-colors shadow-sm disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+@utility btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-slate-700 font-semibold rounded-xl border border-slate-300 hover:bg-slate-50 transition-colors;
+}
+
+@utility btn-google {
+  @apply inline-flex items-center justify-center gap-3 px-6 py-3 bg-white text-slate-700 font-semibold rounded-xl border-2 border-slate-200 hover:bg-slate-50 hover:border-slate-300 transition-all w-full;
+}
+
+@utility input-field {
+  @apply w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all;
+}
+
+@utility card {
+  @apply bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden;
+}
