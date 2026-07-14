@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Twitter, Instagram, Facebook, Youtube } from 'lucide-react'
+import { Globe, Mail, Phone, PlayCircle } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -12,7 +12,7 @@ export default function Footer() {
               <div className="w-9 h-9 bg-brand-600 rounded-xl flex items-center justify-center">
                 <span className="text-white font-bold text-lg">P</span>
               </div>
-              <span className="font-bold text-xl text-white">PhoneGear</span>
+              <span className="font-bold text-xl text-white">Phone Acessory Shop</span>
             </div>
             <p className="text-sm text-slate-400 max-w-xs">
               Premium phone accessories for every device. Quality you can trust, prices you'll love.
@@ -61,12 +61,12 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-slate-800 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-slate-500">© 2024 PhoneGear. All rights reserved.</p>
+          <p className="text-sm text-slate-500">© 2024 Phone Acessory Shop. All rights reserved.</p>
           <div className="flex items-center gap-4">
-            <a href="#" className="text-slate-400 hover:text-white"><Twitter className="w-5 h-5" /></a>
-            <a href="#" className="text-slate-400 hover:text-white"><Instagram className="w-5 h-5" /></a>
-            <a href="#" className="text-slate-400 hover:text-white"><Facebook className="w-5 h-5" /></a>
-            <a href="#" className="text-slate-400 hover:text-white"><Youtube className="w-5 h-5" /></a>
+            <a href="#" aria-label="Website" className="text-slate-400 hover:text-white"><Globe className="w-5 h-5" /></a>
+            <a href="#" aria-label="Email" className="text-slate-400 hover:text-white"><Mail className="w-5 h-5" /></a>
+            <a href="#" aria-label="Phone" className="text-slate-400 hover:text-white"><Phone className="w-5 h-5" /></a>
+            <a href="#" aria-label="Video" className="text-slate-400 hover:text-white"><PlayCircle className="w-5 h-5" /></a>
           </div>
         </div>
       </div>

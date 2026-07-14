@@ -34,7 +34,7 @@ export default function Navbar() {
             <div className="w-9 h-9 bg-brand-600 rounded-xl flex items-center justify-center">
               <span className="text-white font-bold text-lg">P</span>
             </div>
-            <span className="font-bold text-xl text-slate-900 hidden sm:block">PhoneGear</span>
+            <span className="font-bold text-xl text-slate-900 hidden sm:block">Phone Acessory Shop</span>
           </Link>
 
           {/* Search bar */}

@@ -60,7 +60,7 @@ export default function Signup() {
             <span className="text-white font-bold text-2xl">P</span>
           </div>
           <h1 className="text-2xl font-bold text-slate-900">Create Account</h1>
-          <p className="text-slate-500 text-sm mt-1">Join PhoneGear and start shopping</p>
+          <p className="text-slate-500 text-sm mt-1">Join Phone Acessory Shop and start shopping</p>
         </div>
 
         <div className="card p-8">

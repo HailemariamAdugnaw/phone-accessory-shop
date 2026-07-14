@@ -50,7 +50,7 @@ export default function Login() {
             <span className="text-white font-bold text-2xl">P</span>
           </div>
           <h1 className="text-2xl font-bold text-slate-900">Welcome Back</h1>
-          <p className="text-slate-500 text-sm mt-1">Sign in to your PhoneGear account</p>
+          <p className="text-slate-500 text-sm mt-1">Sign in to your Phone Acessory Shop account</p>
         </div>
 
         <div className="card p-8">

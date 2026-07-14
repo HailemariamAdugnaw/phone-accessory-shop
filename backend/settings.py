@@ -29,6 +29,14 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# settings.py
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://localhost:8000',
+    'https://127.0.0.1:8000',
+]
+
+
 
 # Application definition
 
@@ -131,12 +139,10 @@ AUTH_USER_MODEL = 'accounts.User'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-FORCE_SCRIPT_NAME = "/proxy/8000"
-
 # Path where collectstatic will gather files for production
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
-STATIC_URL = '/proxy/8000/static/'
+STATIC_URL = '/static/'
 
 # Enable WhiteNoise compression and unique filename hashing
 STORAGES = {
