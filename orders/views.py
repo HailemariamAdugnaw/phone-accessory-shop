@@ -4,6 +4,8 @@ from rest_framework import generics, status
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from django.db import transaction
+from decimal import Decimal
+from accounts.authentication import FirebaseAuthentication
 from .models import Order, OrderItem
 from .serializers import OrderSerializer, CreateOrderSerializer
 from products.models import Product
@@ -14,6 +16,7 @@ class OrderListCreateView(generics.ListCreateAPIView):
     GET  /api/orders/       — List current user's orders
     POST /api/orders/       — Create a new order
     """
+    authentication_classes = [FirebaseAuthentication]
     permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
@@ -32,7 +35,7 @@ class OrderListCreateView(generics.ListCreateAPIView):
 
         # Build order items from DB-fetched prices
         order_items = []
-        subtotal = 0
+        subtotal = Decimal('0.00')
 
         for item_data in data['items']:
             product = Product.objects.get(id=item_data['product_id'])
@@ -42,7 +45,7 @@ class OrderListCreateView(generics.ListCreateAPIView):
             subtotal += line_total
             order_items.append((product, quantity, price))
 
-        shipping_cost = 0 if subtotal >= 50 else 5.99
+        shipping_cost = Decimal('0.00') if subtotal >= Decimal('50.00') else Decimal('5.99')
         total = subtotal + shipping_cost
 
         # Create the order
@@ -83,6 +86,7 @@ class OrderDetailView(generics.RetrieveAPIView):
     """
     GET /api/orders/<id>/ — Retrieve a specific order (must belong to the user)
     """
+    authentication_classes = [FirebaseAuthentication]
     permission_classes = [IsAuthenticated]
     serializer_class = OrderSerializer
 

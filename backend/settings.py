@@ -54,7 +54,7 @@ INSTALLED_APPS = [
     'django_filters',
 
     # Local apps
-    'accounts',
+    'accounts.apps.AccountsConfig',
     'products',
     'orders',
 
@@ -143,6 +143,12 @@ AUTH_USER_MODEL = 'accounts.User'
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
 STATIC_URL = '/static/'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'accounts.authentication.FirebaseAuthentication',
+    ],
+}
 
 # Enable WhiteNoise compression and unique filename hashing
 STORAGES = {

@@ -4,6 +4,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
+from .authentication import FirebaseAuthentication
 from .serializers import UserSerializer
 
 
@@ -65,6 +66,7 @@ class UserProfileView(APIView):
     Requires Firebase authentication.
     Returns the authenticated user's profile.
     """
+    authentication_classes = [FirebaseAuthentication]
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
